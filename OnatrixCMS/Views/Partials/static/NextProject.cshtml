@@ -1,0 +1,31 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper 
+
+@{
+	Layout = "mainLayout.cshtml";
+    var nextImg = Model?.Value<IPublishedContent>("nextProjectImg")?.Url() ?? ""; 
+       
+}     
+  <link rel="stylesheet" href="/css/Partialscss/Nextproject.css">
+         <section class="nextproject">
+                <div class="container">            
+                    <img  src="@nextImg" alt="">
+                    <div class="know">
+                        <h1>@Model.Value("nextProjectPartialH1")</h1>
+                        <div class="infor">
+                            <p class="infor-p"><i class="fa-solid fa-location-dot"></i>@Model.Value("nextProjectPartialOffice")</p>
+                            <p class="infor-data">@Model.Value("nextProjectPartialAddress")</p>
+                        </div>
+                        <div class="infor">
+                            <p class="infor-p"><i class="fa-solid fa-phone-flip"></i>@Model.Value("nextProjectPartialPhone")</p>
+                            <p class="infor-data">@Model.Value("nextProjectPartialNumber")</p>
+                        </div>
+                        <div class="infor">
+                            <p class="infor-p"><i class="fa-regular fa-envelope"></i>@Model.Value("nextProjectPartialEmail")</p>
+                            <p class="infor-data">@Model.Value("nextProjectPartialEmailAddress")</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </section>

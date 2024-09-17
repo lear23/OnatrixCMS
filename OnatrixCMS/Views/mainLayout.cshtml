@@ -1,0 +1,35 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+
+    var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Onatrix - Financial Solutions for Your Business" : "Onatrix - Financial Solutions for Your Business";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/07486d9066.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/main.css" />
+ 
+    <title>@pageTitle</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+          
+        </header>
+        <main>
+             @RenderBody()
+        </main>
+		<footer></footer>
+    
+    </div>
+
+    
+  <script src="/Scripts/main.js"></script>
+</body>
+</html>

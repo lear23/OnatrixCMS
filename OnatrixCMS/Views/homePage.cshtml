@@ -1,0 +1,207 @@
+﻿@{
+	Layout = "mainLayout.cshtml";
+}
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    var bgImnage = Model?.Value<IPublishedContent>("heroBgImage")?.Url() ?? ""; 
+    var sigImage = Model?.Value<IPublishedContent>("aboutSectionSigImage")?.Url() ?? "";
+    var storyImage = Model?.Value<IPublishedContent>("storySectionImage")?.Url() ?? "";
+    var storyBgImage = Model?.Value<IPublishedContent>("storySectionBgImage")?.Url() ?? "";
+
+    var successVideo = Model?.Value<IPublishedContent>("video")?.Url() ?? "";
+
+    var ServiceImg = Model?.Value<IPublishedContent>("servicesSectionItemImg1")?.Url() ?? "";
+    var serviceImg2 = Model?.Value<IPublishedContent>("servicesSectionItemImg2")?.Url() ?? "";
+    var serviceImg3 = Model?.Value<IPublishedContent>("servicesSectionItemImg3")?.Url() ?? "";
+    var serviceImg4 = Model?.Value<IPublishedContent>("servicesSectionItemImg4")?.Url() ?? "";
+    var serviceImg5 = Model?.Value<IPublishedContent>("servicesSectionItemImg5")?.Url() ?? "";
+    var serviceImg6 = Model?.Value<IPublishedContent>("servicesSectionItemImg6")?.Url() ?? "";
+
+
+
+    var ourProjectImg = Model?.Value<IPublishedContent>("projectSectionSliderImg1")?.Url() ?? "";
+    var ourProjectImg2 = Model?.Value<IPublishedContent>("projectSectionSliderImg2")?.Url() ?? "";
+    var ourProjectImg3 = Model?.Value<IPublishedContent>("projectSectionSliderImg3")?.Url() ?? "";
+    var ourProjectImg4 = Model?.Value<IPublishedContent>("projectSectionSliderImg4")?.Url() ?? "";    
+}
+
+<section id="heroSlider" class="hero ">
+ <div class="background" style="background-image:url(@bgImnage); background-size: cover; background-position:60%;"></div>
+    <div class="container">
+        <div class="containerHero">
+            <h1 class="headline">@Model?.Value("heroHeadline")</h1>
+            <p class="ingress">@Model?.Value("heroText")</p>
+            <div>
+                <a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")</a>
+            </div>
+        </div>
+    </div>    
+</section>
+<section id="aboutUs" class="about-us">
+    <div class="container">
+        <div class="content">
+            <div class="about-text">
+                <div class="headline">
+                    <h5>@Model?.Value("aboutSectionTitle")</h5>
+                    <h2>@Model?.Value("aboutSectionHeadline")</h2>
+                </div>
+                <blockquote class="quote">@Model?.Value("aboutSectionQuote")</blockquote>
+                <p>@Model?.Value("aboutSectionText")</p>
+                <div class="containerSignature">
+                    <img class="imgSignature" src="@sigImage" alt="@Model?.Value("aboutSignature")">
+                    <div class="CleanSignature">
+                        <p>@Model?.Value("aboutSignature")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <div class="formTitle"><h1>Request a Call Back</h1></div>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email address">
+                <input type="text" placeholder="Phone">
+                <select>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="service1">Service 1</option>
+                    <option value="service2">Service 2</option>
+                    <option value="service3">Service 3</option>
+                    <option value="service4">Service 4</option>
+                </select>
+                <a href="#">Submit</a>
+            </div>
+        </div>
+    </div>
+</section>
+ <section class="services">
+    <div class="container">
+        <h5>OUR SERVICES</h5>
+        <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
+        <div class="servicesCard">
+            <div class="items">
+                <h3>@Model?.Value("servicesSectionItemTitle1")</h3>
+                <img src="@ServiceImg" alt="">
+                <p>@Model?.Value("servicesSectionItemText")</p>
+            </div>
+            <div class="items">
+                <h3>@Model?.Value("servicesSectionItemTitle2")</h3>
+                <img src="@serviceImg2" alt="">
+                <p>@Model?.Value("servicesSectionItemText") </p>
+            </div>
+            <div class="items">
+                <h3>@Model?.Value("servicesSectionItemTitle3")</h3>
+                <img src="@serviceImg3" alt="">
+                <p>@Model?.Value("servicesSectionItemText")</p>
+            </div>
+            <div class="items">
+                <h3>@Model?.Value("servicesSectionItemTitle4")</h3>
+                <img src="@serviceImg4" alt="">
+                <p>@Model?.Value("servicesSectionItemText")</p>
+            </div>
+            <div class="items">
+                <h3>@Model?.Value("servicesSectionItemTitle5")</h3>
+                <img src="@serviceImg5" alt="">
+                <p>@Model?.Value("servicesSectionItemText") </p>
+            </div>
+            <div class="items">
+                <h3>@Model?.Value("servicesSectionItemTitle6")</h3>
+                <img src="@serviceImg6" alt="">
+                <p>@Model?.Value("servicesSectionItemText")</p>
+            </div>
+            
+        </div>
+    </div>
+ </section>
+ 
+
+<section class="container">
+    <div class="readToStory">
+        <div class="background-read" style="background-image: url('@storyBgImage');"></div>
+        <div class="readText">
+            <div>
+                <h1>@Model?.Value("storySectionTitle")</h1>
+                <h1 class="h1read">@Model?.Value("storySectionH1")</h1>
+            </div>
+            <p>@Model?.Value("storySectionText")</p>
+            <a class="btn btn-primary" href="@Model?.Value("storySectionButtonUrl")">@Model?.Value("storySectionButtonText")</a>
+        </div>   
+        <img src="@storyImage" alt="">
+    </div> 
+</section>
+<section class="success">
+    <div class="container">
+        <div class="background-Success">
+            <div class="successStory">
+                    <h5>@Model?.Value("successSectionTitle")</h5>
+                    <h1>@Model?.Value("successSectionHeadline")</h1>
+            </div>
+                <div class="numberItems">
+                    <div class="numbers">
+                        <p class="number-size">@Model?.Value("successSectionNumber1")</p>
+                        <p>@Model?.Value("successSectionNumber1Text")</p>
+                    </div>
+                    <div class="numbers">
+                        <p class="number-size">@Model?.Value("successSectionNumber2")</p>
+                        <p>@Model?.Value("successSectionNumber2Text")</p>
+                    </div>
+                    <div class="numbers">
+                        <p class="number-size">@Model?.Value("successSectionNumber3")</p>
+                        <p>@Model?.Value("successSectionNumber3Text")</p>
+                    </div>
+                </div>
+         
+        </div>
+    </div>
+       <div class="image-wrapper">
+        <video class="responsive-video" muted>
+            <source src="@successVideo" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+<section class="ourProjects">
+    <div class="container">
+        <h5>@Model?.Value("projectSectionTitle")</h5>
+        <h1>@Model?.Value("projectSectionHeadline")</h1>
+    </div>
+    <div class="projects-slider">
+        <div class="slider-wrapper">
+            <div class="slider-cards">
+                <div class="slider-item">
+                    <img src="@ourProjectImg" alt="">
+                    <a href="@Model?.Value("projectSectionSliderUrl1")" class="slider-texts">
+                        <h5>@Model?.Value("projectSectionSliderTitle1")</h5>
+                        <p>@Model?.Value("projectSectionSliderText")</p>
+                    </a>
+                </div>          
+                <div class="slider-item">
+                    <img src="@ourProjectImg2" alt="">
+                    <a href="@Model?.Value("projectSectionSliderUrl2")" class="slider-texts">
+                        <h5>@Model?.Value("projectSectionSliderTitle2")</h5>
+                        <p>@Model?.Value("projectSectionSliderText")</p>
+                    </a>
+                </div>
+                <div class="slider-item">
+                    <img src="@ourProjectImg3" alt="">
+                    <a href="@Model?.Value("projectSectionSliderUrl3")" class="slider-texts">
+                        <h5>@Model?.Value("projectSectionSliderTitle3")</h5>
+                        <p>@Model?.Value("projectSectionSliderText")</p>
+                    </a>
+                </div>
+                <div class="slider-item">
+                    <img src="@ourProjectImg4" alt="">
+                    <a href="@Model?.Value("projectSectionSliderUrl4")" class="slider-texts">
+                        <h5>@Model?.Value("projectSectionSliderTitle4")</h5>
+                        <p>@Model?.Value("projectSectionSliderText")</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
