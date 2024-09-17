@@ -1,0 +1,31 @@
+﻿@using Umbraco-Cms-Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+
+@{
+      var sectionMaxWidthTitle = Model?.Content.Value<string>("sectionMaxWidthTitle") ?? ""; 
+      var sectionMaxWidthId = sectionMaxWidthTitle?.ToString().ToLower().Trim().Replace("","-");
+      
+      var centerMaxWidthContentClass =(Model!.Content.Value<bool>("centerMaxWidthContentOnPage")) ? "center" : ""; 
+      var spacingMaxWidthBottomClass =(Model.Content.Value<bool>("addMaxWidthSpaceToBottom")) ? "spacing-bottom" : ""; 
+      var spacingMaxWidthTopClass =(Model.Content.Value<bool>("addMaxWidthSpaceToTop")) ? "spacing-top" : ""; 
+      
+      var sectionMaxWidthBackgroundColorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("sectionMaxWidthBackgroundColor")?.Label.ToLower() ?? null;
+      var backgroundMaxWidthColorClass = (!string.IsNullOrEmpty(sectionMaxWidthBackgroundColorLabel) && sectionMaxWidthBackgroundColorLabel != "none" ) ? $"bg-{sectionMaxWidthBackgroundColorLabel}" : "";  
+      var sectionMaxWidthBgImage = Model?.Content.Value<IPublishedContent>("sectionMaxWidthBackgroundImage")?.Url() ?? null; 
+}
+
+
+<section id="@sectionMaxWidthId" class="@spacingMaxWidthTopClass spacingMaxWidthBottomClass"> 
+        @if (!string.IsNullOrEmpty(sectionMaxWidthBackgroundColorLabel))
+        {
+          <div class="background @backgroundMaxWidthColorClass"></div>
+        }
+    @if (!string.IsNullOrEmpty(sectionMaxWidthBgImage))
+        {
+          <img class="background-image" src="@sectionMaxWidthBgImage" alt="@sectionMaxWidthTitle background image" />
+        }
+        @await Html.GetBlockGridItemAreasHtmlAsync(Model)
+    
+</section>  
