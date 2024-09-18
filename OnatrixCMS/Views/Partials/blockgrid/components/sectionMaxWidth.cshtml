@@ -1,11 +1,11 @@
-﻿@using Umbraco-Cms-Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
 
 @{
       var sectionMaxWidthTitle = Model?.Content.Value<string>("sectionMaxWidthTitle") ?? ""; 
-      var sectionMaxWidthId = sectionMaxWidthTitle?.ToString().ToLower().Trim().Replace("","-");
+      var sectionMaxWidthId = sectionMaxWidthTitle?.ToString().ToLower().Trim().Replace(" ","-");
       
       var centerMaxWidthContentClass =(Model!.Content.Value<bool>("centerMaxWidthContentOnPage")) ? "center" : ""; 
       var spacingMaxWidthBottomClass =(Model.Content.Value<bool>("addMaxWidthSpaceToBottom")) ? "spacing-bottom" : ""; 
