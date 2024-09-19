@@ -23,7 +23,15 @@
     var ourProjectImg = Model?.Value<IPublishedContent>("projectSectionSliderImg1")?.Url() ?? "";
     var ourProjectImg2 = Model?.Value<IPublishedContent>("projectSectionSliderImg2")?.Url() ?? "";
     var ourProjectImg3 = Model?.Value<IPublishedContent>("projectSectionSliderImg3")?.Url() ?? "";
-    var ourProjectImg4 = Model?.Value<IPublishedContent>("projectSectionSliderImg4")?.Url() ?? "";    
+    var ourProjectImg4 = Model?.Value<IPublishedContent>("projectSectionSliderImg4")?.Url() ?? "";   
+ 
+    var logo1 = Model?.Value<IPublishedContent>("logo1")?.Url() ?? ""; 
+    var logo2 = Model?.Value<IPublishedContent>("logo2")?.Url() ?? ""; 
+    var logo3 = Model?.Value<IPublishedContent>("logo3")?.Url() ?? ""; 
+    var logo4 = Model?.Value<IPublishedContent>("logo4")?.Url() ?? ""; 
+    var logo5 = Model?.Value<IPublishedContent>("logo5")?.Url() ?? ""; 
+    var logo6 = Model?.Value<IPublishedContent>("logo6")?.Url() ?? "";                     
+
 }
 
 <section id="heroSlider" class="hero ">
@@ -201,5 +209,12 @@
         
     </div>
 </section>
-
+<section class="container logos">
+    <img src="@logo1" alt="">
+    <img src="@logo2" alt="">
+    <img src="@logo3" alt="">
+    <img src="@logo4" alt="">
+    <img src="@logo5" alt="">
+    <img src="@logo6" alt="">
+</section>                                                                                                                                                                                                                                                  
 

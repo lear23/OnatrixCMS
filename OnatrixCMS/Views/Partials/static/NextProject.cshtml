@@ -3,29 +3,29 @@
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper 
 
 @{
-	Layout = "mainLayout.cshtml";
-    var nextImg = Model?.Value<IPublishedContent>("nextProjectImg")?.Url() ?? ""; 
+
+    <!-- var nextImg = Model?.Value<IPublishedContent>("nextProjectImg")?.Url() ?? "";  -->
        
 }     
-  <link rel="stylesheet" href="/css/Partialscss/Nextproject.css">
+  <link rel="stylesheet" href="/css/PartialsSection/Nextproject.css">
          <section class="nextproject">
                 <div class="container">            
-                    <img  src="@nextImg" alt="">
+                    <img  src="images/Group110.png" alt="">
                     <div class="know">
-                        <h1>@Model.Value("nextProjectPartialH1")</h1>
+                        <h1>Let us know about <br> your next project</h1>
                         <div class="infor">
-                            <p class="infor-p"><i class="fa-solid fa-location-dot"></i>@Model.Value("nextProjectPartialOffice")</p>
-                            <p class="infor-data">@Model.Value("nextProjectPartialAddress")</p>
+                            <p class="infor-p"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                            <p class="infor-data">Klarabergsviadukten 90, 111 52 Stockholm</p>
                         </div>
                         <div class="infor">
-                            <p class="infor-p"><i class="fa-solid fa-phone-flip"></i>@Model.Value("nextProjectPartialPhone")</p>
-                            <p class="infor-data">@Model.Value("nextProjectPartialNumber")</p>
+                            <p class="infor-p"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                            <p class="infor-data">Phone number</p>
                         </div>
                         <div class="infor">
-                            <p class="infor-p"><i class="fa-regular fa-envelope"></i>@Model.Value("nextProjectPartialEmail")</p>
-                            <p class="infor-data">@Model.Value("nextProjectPartialEmailAddress")</p>
+                            <p class="infor-p"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                            <p class="infor-data">sales@onatrix.com</p>
                         </div>
                     </div>
                 </div>
                
-            </section>
+</section>

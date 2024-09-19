@@ -1,0 +1,111 @@
+﻿
+
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	 Layout = "mainLayout.cshtml";
+
+   var aboutPageImg = Model?.Value<IPublishedContent>("aboutPageImg")?.Url() ?? ""; 
+   var starImg = Model?.Value<IPublishedContent>("reviewsSectionImg")?.Url() ?? ""; 
+   var reviewsBgImg = Model?.Value<IPublishedContent>("reviewsSectionBgImg")?.Url() ?? "";
+   
+   var cardImg  = Model?.Value<IPublishedContent>("ourExpertSectionCardImg")?.Url() ?? "";  
+   var cardImg2 = Model?.Value<IPublishedContent>("ourExpertSectionCardImg2")?.Url() ?? "";  
+   var cardImg3 = Model?.Value<IPublishedContent>("ourExpertSectionCardImg3")?.Url() ?? "";  
+   var cardImg4 = Model?.Value<IPublishedContent>("ourExpertSectionCardImg4")?.Url() ?? "";  
+   var cardImg5 = Model?.Value<IPublishedContent>("ourExpertSectionCardImg5")?.Url() ?? "";  
+   var cardImg6 = Model?.Value<IPublishedContent>("ourExpertSectionCardImg6")?.Url() ?? "";  
+   var cardImg7 = Model?.Value<IPublishedContent>("ourExpertSectionCardImg7")?.Url() ?? "";
+
+    var h1Content = Model?.Value("reviewsSectionH1")?.ToString();    
+    var formattedH1Content = h1Content?.Replace("\\n", "<br>");
+    var h1Content2 = Model?.Value("ourExpertSectionH1")?.ToString();    
+    var formattedH1Content2 = h1Content2?.Replace("\\n", "<br>");
+      
+   
+
+}
+ <link rel="stylesheet" href="/css/AboutUs.css" />
+  
+ <main>
+<section class="container showcase">
+                <div class="showase-img">
+                    <img src="@aboutPageImg" alt="">
+                    <p>@Model?.Value("aboutPageText")</p>
+                </div>
+                <div class="showcase-text">
+                    <h3>@Model?.Value("aboutPageQuote")</h3>
+                    <p>@Model?.Value("aboutUsText")</p>
+               
+                </div>             
+                                
+            </section>
+           <section class="reviews">
+                <div class="container">
+                    <h5>@Model?.Value("reviewsSectionH5")</h5>
+                    <h1>@Html.Raw(formattedH1Content)</h1>
+                    <h4 class="h4reviews">@Model?.Value("reviewsSectionH4")</h4>
+                   
+                        <img class="ratting" src="@starImg" alt="">
+                               
+                   <p>@Model?.Value("reviewsSectionP")</p>
+                   <h4 class="swebank">@Model?.Value("reviewsSectionSwebank")</h4>
+                </div>
+                <img class="bgKevin" src="@reviewsBgImg" alt="">
+            </section>
+           <section class="ourexpert">
+                <div class="container-ourExpert">
+                    <h3>@Model?.Value("ourExpertSectionH3")</h3>
+                     <h1>@Html.Raw(formattedH1Content2)</h1>
+                </div>
+                <div class="container expertcard">
+                
+                    <div class="card">
+                      <img src="@cardImg" alt="">
+                      <span>@Model?.Value("ourExpertSectionCardSpan")</span>
+                      <p>@Model?.Value("ourExpertSectionCardP")</p>
+                    </div>
+                    <div class="card">
+                      <img src="@cardImg2" alt="">
+                      <span>@Model?.Value("ourExpertSectionCardSpan2")</span>
+                      <p>@Model?.Value("ourExpertSectionCardP2")</p>
+                    </div>
+                    <div class="card">
+                      <img src="@cardImg3" alt="">
+                      <span>@Model?.Value("ourExpertSectionCardSpan3")</span>
+                      <p>@Model?.Value("ourExpertSectionCardP3")</p>
+                    </div>
+                   <div class="expertcard2">
+                    <div class="card">
+                        <img src="@cardImg4" alt="">
+                        <span>@Model?.Value("ourExpertSectionCardSpan4")</span>
+                        <p>@Model?.Value("ourExpertSectionCardP4")</p>
+                      </div>
+                      <div class="card">
+                        <img src="@cardImg5" alt="">
+                        <span>@Model?.Value("ourExpertSectionCardSpan5")</span>
+                        <p>@Model?.Value("ourExpertSectionCardP5")</p>
+                      </div>
+                      <div class="card">
+                        <img src="@cardImg6" alt="">
+                        <span>@Model?.Value("ourExpertSectionCardSpan6")</span>
+                        <p>@Model?.Value("ourExpertSectionCardP6")</p>
+                      </div>
+                      <div class="card">
+                        <img src="@cardImg7" alt="">
+                        <span>@Model?.Value("ourExpertSectionCardSpan7")</span>
+                        <p>@Model?.Value("ourExpertSectionCardP7")</p>
+                      </div>
+                    </div>
+                   </div>             
+                  
+            </section> -->
+             <section class="nextproject">
+                     @await Html.PartialAsync("static/NextProject")
+             </section>
+        
+   
+ </main>
+
+
+     
