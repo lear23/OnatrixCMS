@@ -17,10 +17,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
+/* 
 header, main {
     flex: 1;
-}
+} */
 /* ------------Container--------------- */
 
 .container {
@@ -68,11 +68,15 @@ header, main {
     background-color: #090909;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 100%;
 }
 
-.container {
+ .top .container-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px;
+    margin: 0 auto; 
 }
 
 .address {
@@ -81,8 +85,10 @@ header, main {
 
 .socialmedia a {
     color: rgb(252, 248, 248);
-    margin-left: 10px;
+    margin-left: 20px;
 }
+
+
 
 
 /* ----------------Navbar------------------------- */

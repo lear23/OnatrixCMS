@@ -19,9 +19,15 @@
 <body>
 
     <div class="wrapper">
-        @await Html.PartialAsync("static/topbar")
-        <header>
-         @await Html.PartialAsync("static/navbar")
+       
+        <header>  
+             <section class="top">     
+                 @await Html.PartialAsync("static/topbar")
+             </section>
+         
+            <section class="navbar">
+                @await Html.PartialAsync("static/navbar")
+            </section>
         </header>
         <main>
              @RenderBody()

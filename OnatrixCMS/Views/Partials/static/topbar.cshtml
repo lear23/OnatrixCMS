@@ -5,15 +5,17 @@
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null; 
     var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+   
 }
-            
-<section class="top">
-    <div class="container">
-        <div class="address">Klarabergsviadukten 90, 111 64 Stockholm</div>
+
+
+
+    <div class="container container-top">
+        <div class="address">
+            Klarabergsviadukten 90, 111 64 Stockholm
+        </div>  
         <div class="socialmedia">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            @await Html.PartialAsync("socialmedia.cshtml")
          </div>
     </div>
- </section>
+
