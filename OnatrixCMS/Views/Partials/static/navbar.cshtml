@@ -5,12 +5,19 @@
 @{
    
     
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+   
+    var logoImg = settings?.Value<IPublishedContent>("logotypeOnatrix")?.Url() ?? ""; 
+    var navbarLinkUrl = Model?.Value<IPublishedContent>("navbarLinkUrl")?.Url() ?? ""; 
+    var navbarList = Model?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("navbarList") ?? null;   
 }
 
 <section class="navbar">
             <div class="container">
                 <a class="logo" href="/">
-                    <img src="images/Brand.svg" alt="">
+                    <img src="@logoImg" alt="">
                 </a>
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="menu-icon">

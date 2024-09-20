@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	
+
+    var ServiceImg = Model?.Value<IPublishedContent>("servicesSectionItemImg1")?.Url() ?? "";
+    var serviceImg2 = Model?.Value<IPublishedContent>("servicesSectionItemImg2")?.Url() ?? "";
+    var serviceImg3 = Model?.Value<IPublishedContent>("servicesSectionItemImg3")?.Url() ?? "";
+    var serviceImg4 = Model?.Value<IPublishedContent>("servicesSectionItemImg4")?.Url() ?? "";
+    var serviceImg5 = Model?.Value<IPublishedContent>("servicesSectionItemImg5")?.Url() ?? "";
+    var serviceImg6 = Model?.Value<IPublishedContent>("servicesSectionItemImg6")?.Url() ?? "";
+                  
+
+}
+
+ <section class="services">
+        <div class="container">
+            <h5>OUR SERVICES</h5>
+            <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
+            <div class="servicesCard">
+                <div class="items">
+                    <h3>@Model?.Value("servicesSectionItemTitle1")</h3>
+                    <img src="@ServiceImg" alt="">
+                    <p>@Model?.Value("servicesSectionItemText")</p>
+                </div>
+                <div class="items">
+                    <h3>@Model?.Value("servicesSectionItemTitle2")</h3>
+                    <img src="@serviceImg2" alt="">
+                    <p>@Model?.Value("servicesSectionItemText") </p>
+                </div>
+                <div class="items">
+                    <h3>@Model?.Value("servicesSectionItemTitle3")</h3>
+                    <img src="@serviceImg3" alt="">
+                    <p>@Model?.Value("servicesSectionItemText")</p>
+                </div>
+                <div class="items">
+                    <h3>@Model?.Value("servicesSectionItemTitle4")</h3>
+                    <img src="@serviceImg4" alt="">
+                    <p>@Model?.Value("servicesSectionItemText")</p>
+                </div>
+                <div class="items">
+                    <h3>@Model?.Value("servicesSectionItemTitle5")</h3>
+                    <img src="@serviceImg5" alt="">
+                    <p>@Model?.Value("servicesSectionItemText") </p>
+                </div>
+                <div class="items">
+                    <h3>@Model?.Value("servicesSectionItemTitle6")</h3>
+                    <img src="@serviceImg6" alt="">
+                    <p>@Model?.Value("servicesSectionItemText")</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
