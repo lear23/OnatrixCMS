@@ -8,11 +8,61 @@
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
 
-   
     var logoImg = settings?.Value<IPublishedContent>("logotypeOnatrix")?.Url() ?? ""; 
-    var navbarLinkUrl = Model?.Value<IPublishedContent>("navbarLinkUrl")?.Url() ?? ""; 
-    var navbarList = Model?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("navbarList") ?? null;   
+
+    var navbarList = settings?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("navbarOnatrix") ?? null; 
 }
+
+
+
+<!-- 
+<section class="navbar">
+    <div class="container">
+    
+        <a class="logo" href="/">
+            <img src="@logoImg" alt="Logo">
+        </a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        
+        <nav>
+            @if (navbarList != null)
+            {
+                @foreach (var navItem in navbarList)
+                {
+                    var linkName = navItem?.Content?.Value<string>("navbarList");
+                    var linkUrl = navItem?.Content?.Value<string>("navbarLinkUrl") ?? "#";
+
+                    switch (linkName?.ToLower())
+                    {
+                        case "about":
+                            <a href="@linkUrl" title="@linkName" target="_blank" class="nav-link"></a>
+                            break;
+                        case "services":
+                            <a href="@linkUrl" title="Services" target="_blank" class="nav-link"></a>
+                            break;
+                        case "projects":
+                            <a href="@linkUrl" title="Projects" target="_blank" class="nav-link">Projects</a>
+                            break;
+                        case "contact":
+                            <a href="@linkUrl" title="Contact" target="_blank" class="nav-link">Contact</a>
+                            break;
+                    }
+                }
+            }
+        </nav>
+
+        <!-- Ícono de búsqueda -->
+        <!-- <div class="search">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    </div>
+</section> --> 
+
 
 <section class="navbar">
             <div class="container">
@@ -33,7 +83,7 @@
                     <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                 </div>
             </div>
-</section>
+</section> 
 
 
 

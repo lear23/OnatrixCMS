@@ -4,6 +4,7 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	 Layout = "mainLayout.cshtml";
+   ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
    var aboutPageImg = Model?.Value<IPublishedContent>("aboutPageImg")?.Url() ?? ""; 
    var starImg = Model?.Value<IPublishedContent>("reviewsSectionImg")?.Url() ?? ""; 
@@ -26,6 +27,8 @@
 
 }
  <link rel="stylesheet" href="/css/AboutUs.css" />
+
+
   
  <main>
 <section class="container showcase">

@@ -8,7 +8,6 @@
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
 
    
-    var logoImg = settings?.Value<IPublishedContent>("logotypeOnatrix")?.Url() ?? ""; 
 
     var navbarList = settings?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("navbarOnatrix") ?? null;
 }
@@ -18,13 +17,12 @@
         @foreach (var navItem in navbarList)
         {
 
-            var linkName = navItem?.Content.Value<string>("navbarList");
-            var linkUrl = navItem?.Content.Value<IPublishedContent>("navbarLinkUrl")?.Url() ?? "#";
-
+            var linkName = navItem?.Content?.Value<string>("navbarList");
+            var linkUrl = navItem?.Content?.Value<string>("navbarLinkUrl")?.Url() ?? "#";
             switch (linkName?.ToLower())
             {
                 case "about":
-                <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link">About</a>
+                <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
                     break;
                 case "services":
                 <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>

@@ -4,6 +4,7 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    
     var bgImnage = Model?.Value<IPublishedContent>("heroBgImage")?.Url() ?? ""; 
     var sigImage = Model?.Value<IPublishedContent>("aboutSectionSigImage")?.Url() ?? "";
     var storyImage = Model?.Value<IPublishedContent>("storySectionImage")?.Url() ?? "";
@@ -16,7 +17,7 @@
     var serviceImg3 = Model?.Value<IPublishedContent>("servicesSectionItemImg3")?.Url() ?? "";
     var serviceImg4 = Model?.Value<IPublishedContent>("servicesSectionItemImg4")?.Url() ?? "";
     var serviceImg5 = Model?.Value<IPublishedContent>("servicesSectionItemImg5")?.Url() ?? "";
-    var serviceImg6 = Model?.Value<IPublishedContent>("servicesSectionItemImg6")?.Url() ?? "";
+    var serviceImg6 = Model?.Value<IPublishedContent>("servicesSectionItemImg6")?.Url() ?? ""; 
 
 
 
@@ -34,12 +35,18 @@
 
 }
 
+@if(string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+
 <main>
     <section id="heroSlider" class="hero ">
         <div class="background" style="background-image:url(@bgImnage); background-size: cover; background-position:60%;"></div>
         <div class="container">
             <div class="containerHero">
-                <h1 class="headline">@Model?.Value("heroHeadline")</h1>
+                <h1 class="headline2">@Model?.Value("heroHeadline")</h1>
                 <p class="ingress">@Model?.Value("heroText")</p>
                 <div>
                     <a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")</a>
@@ -51,7 +58,7 @@
         <div class="container">
             <div class="content">
                 <div class="about-text">
-                    <div class="headline">
+                    <div class="headline2">
                         <h5>@Model?.Value("aboutSectionTitle")</h5>
                         <h2>@Model?.Value("aboutSectionHeadline")</h2>
                     </div>
@@ -83,7 +90,10 @@
             </div>
         </div>
     </section>
-    <section class="services">
+
+     @await Html.PartialAsync("partials/static/OurServicesSection.cshtml")
+
+    <!-- <section class="services">
         <div class="container">
             <h5>OUR SERVICES</h5>
             <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
@@ -121,7 +131,7 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="container">

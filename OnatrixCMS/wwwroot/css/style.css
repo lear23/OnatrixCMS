@@ -178,6 +178,43 @@ header, main {
         border: none;
     }
 }
+/* --------------BradCrumb--------------- */
+
+.onatrixHeadline {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.onatrixHeadline img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 1; 
+}
+
+.headline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 50px;
+    
+}
+.headline .headline-home{   
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.headline span{   
+    color: #d9c3a9;
+}
+
 
 /* -------Footer---------------------- */
 
@@ -240,7 +277,7 @@ footer {
         margin: 0;
     }
 
-    .hero .headline {
+    .hero .headline2 {
         text-align: start;
         font-size: 4.5rem;
         margin-bottom: 20px;
