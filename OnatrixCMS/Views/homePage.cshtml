@@ -37,7 +37,8 @@
 
 @if(string.IsNullOrEmpty(ViewBag.Title))
 {
-    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+   
+    @await Html.PartialAsync("static/breadcrumb")
 }
 
 
@@ -93,45 +94,7 @@
 
      @await Html.PartialAsync("partials/static/OurServicesSection.cshtml")
 
-    <!-- <section class="services">
-        <div class="container">
-            <h5>OUR SERVICES</h5>
-            <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
-            <div class="servicesCard">
-                <div class="items">
-                    <h3>@Model?.Value("servicesSectionItemTitle1")</h3>
-                    <img src="@ServiceImg" alt="">
-                    <p>@Model?.Value("servicesSectionItemText")</p>
-                </div>
-                <div class="items">
-                    <h3>@Model?.Value("servicesSectionItemTitle2")</h3>
-                    <img src="@serviceImg2" alt="">
-                    <p>@Model?.Value("servicesSectionItemText") </p>
-                </div>
-                <div class="items">
-                    <h3>@Model?.Value("servicesSectionItemTitle3")</h3>
-                    <img src="@serviceImg3" alt="">
-                    <p>@Model?.Value("servicesSectionItemText")</p>
-                </div>
-                <div class="items">
-                    <h3>@Model?.Value("servicesSectionItemTitle4")</h3>
-                    <img src="@serviceImg4" alt="">
-                    <p>@Model?.Value("servicesSectionItemText")</p>
-                </div>
-                <div class="items">
-                    <h3>@Model?.Value("servicesSectionItemTitle5")</h3>
-                    <img src="@serviceImg5" alt="">
-                    <p>@Model?.Value("servicesSectionItemText") </p>
-                </div>
-                <div class="items">
-                    <h3>@Model?.Value("servicesSectionItemTitle6")</h3>
-                    <img src="@serviceImg6" alt="">
-                    <p>@Model?.Value("servicesSectionItemText")</p>
-                </div>
-
-            </div>
-        </div>
-    </section> -->
+   
 
 
     <section class="container">

@@ -1,24 +1,21 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
 @{
 	Layout = "mainLayout.cshtml";
-      ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
-
-    var ServiceImg = Model?.Value<IPublishedContent>("servicesSectionItemImg1")?.Url() ?? "";
-    var serviceImg2 = Model?.Value<IPublishedContent>("servicesSectionItemImg2")?.Url() ?? "";
-    var serviceImg3 = Model?.Value<IPublishedContent>("servicesSectionItemImg3")?.Url() ?? "";
-    var serviceImg4 = Model?.Value<IPublishedContent>("servicesSectionItemImg4")?.Url() ?? "";
-    var serviceImg5 = Model?.Value<IPublishedContent>("servicesSectionItemImg5")?.Url() ?? "";
-    var serviceImg6 = Model?.Value<IPublishedContent>("servicesSectionItemImg6")?.Url() ?? "";
       
 }
 
 
 
-  @await Html.PartialAsync("partials/static/OurServicesSection.cshtml")
+@await Html.PartialAsync("static/OurServicesSection")
+
 
 
  <section class="nextproject">
-       @await Html.PartialAsync("static/NextProject")
+      @await Html.PartialAsync("static/NextProject") 
+ 
+
  </section>
