@@ -74,12 +74,28 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops LogotypeOnatrix => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "logotypeOnatrix");
 
 		///<summary>
+		/// logoTyper
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("logoTyper")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel LogoTyper => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "logoTyper");
+
+		///<summary>
 		/// Navbar Onatrix
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("navbarOnatrix")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel NavbarOnatrix => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "navbarOnatrix");
+
+		///<summary>
+		/// Next project Img
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("nextProjectImg")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops NextProjectImg => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "nextProjectImg");
 
 		///<summary>
 		/// Social media Platforms

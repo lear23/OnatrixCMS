@@ -14,13 +14,12 @@
   var homePageDisplayName = "Home";
   var isFirstItem = true;
 
-  var breadCrumbImg = settings?.Value<IPublishedContent>("bgBreadcrumb")?.Url() ?? ""; 
-
+  var breadCrumbImg = settings?.Value<IPublishedContent>("bgBreadcrumb")?.Url() ?? "";
 }
 
-
+ 
  <section class="onatrixHeadline">  
-       <img src="@breadCrumbImg"> 
+      <img src="@breadCrumbImg">  
     <div class="container headline">
         <h1 >@ViewBag.Title</h1>  
         <div>
@@ -32,10 +31,11 @@
                     @foreach (var item in selection.OrderBy(x => x.Level))
                     {
                         var displayName = isFirstItem ? homePageDisplayName : item.Name;
-                        <li><a href="@item.Url(PublishedUrlProvider)">@displayName</a></li>
+                        <li><a href="@item.Url(PublishedUrlProvider)"> @displayName</a></li>
                         isFirstItem = false;
                     }
-                    <li class="active">@Model.Name</li>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <a class="active">@Model.Name</a>
                 </ul>
             }
         </div>                                     

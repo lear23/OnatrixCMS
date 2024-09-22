@@ -28,7 +28,15 @@
             <section class="navbar">
                 @await Html.PartialAsync("static/navbar")
             </section>
-            
+
+
+@if (!string.IsNullOrEmpty(ViewBag.Title) && !Context.Request.Path.Equals("/"))
+{
+    @await Html.PartialAsync("static/breadcrumb")
+}
+
+
+
 
 
         </header>

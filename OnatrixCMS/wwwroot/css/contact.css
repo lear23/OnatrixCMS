@@ -1,16 +1,17 @@
-.contactSection{
-    margin-bottom:300px;
+.contactSection {
+    margin-bottom: 300px;
+   
 }
 
 
 .map-container {
     position: absolute;
-    top: 0;
+    top: 600px;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
     z-index: -1;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
 
 #map {
@@ -20,7 +21,7 @@
 
 .container.contact {
     position:relative;
-    top:90px;
+    top:290px;
     display: flex;
     flex-direction: column;
     align-items: center;

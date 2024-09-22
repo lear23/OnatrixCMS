@@ -4,13 +4,15 @@
 
 @{
 
-    <!-- var nextImg = Model?.Value<IPublishedContent>("nextProjectImg")?.Url() ?? "";  -->
+  var rootContents = UmbracoHelper.ContentAtRoot();
+  var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+  var nextImg = settings?.Value<IPublishedContent>("nextProjectImg")?.Url() ?? ""; 
        
 }     
   <link rel="stylesheet" href="/css/PartialsSection/Nextproject.css">
          <section class="nextproject">
                 <div class="container">            
-                    <img  src="images/Group110.png" alt="">
+                    <img  src="@nextImg" alt="">
                     <div class="know">
                         <h1>Let us know about <br> your next project</h1>
                         <div class="infor">
@@ -29,3 +31,7 @@
                 </div>
                
        </section>
+
+
+
+       <!-- images/Group110.png -->
