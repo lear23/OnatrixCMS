@@ -1,11 +1,12 @@
 /* -------------OUR PROJECT---------------- */
 
 
-section {
+.section-projects {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  margin-bottom: 160px;
+
+
 }
 
 .articlesProjects {
@@ -203,15 +204,5 @@ section {
   }
 }
 
-@media (max-width: 790px) {
-  .nextproject .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto; 
-  }
-}
 
 

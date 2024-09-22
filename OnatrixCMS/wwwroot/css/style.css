@@ -184,8 +184,7 @@ header, main {
 
 .onatrixHeadline {
     position: relative;
-    width: 100%;
-    height: auto;
+    margin-bottom:40px;  
 }
 
 .onatrixHeadline img {

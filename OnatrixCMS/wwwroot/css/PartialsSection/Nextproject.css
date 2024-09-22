@@ -7,6 +7,7 @@
 
 .nextproject .container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between; 
   align-items: center;
   max-width: 1200px;
@@ -17,6 +18,17 @@
   max-width: 50%;
   height: auto; 
 }
+@media (max-width: 790px) {
+  .nextproject .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
+}
+
 
 .know {
   max-width: 45%; 
@@ -49,5 +61,15 @@
 .infor i {
   color: #d9c3a9;
   margin-right: 10px;
+}
+@media (max-width: 790px) {
+  .nextproject .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
 }
 

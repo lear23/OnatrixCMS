@@ -66,20 +66,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BgBreadcrumb => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "bgBreadcrumb");
 
 		///<summary>
+		/// LogoBusiness
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("logoBusiness")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel LogoBusiness => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "logoBusiness");
+
+		///<summary>
 		/// Logotype Onatrix
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("logotypeOnatrix")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops LogotypeOnatrix => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "logotypeOnatrix");
-
-		///<summary>
-		/// logoTyper
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("logoTyper")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel LogoTyper => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "logoTyper");
 
 		///<summary>
 		/// Navbar Onatrix

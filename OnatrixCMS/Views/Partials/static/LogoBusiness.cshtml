@@ -1,0 +1,24 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper 
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+
+    var logoBusiness = settings?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("logoBusiness") ?? null;
+}
+
+@if(logoBusiness != null)
+{
+    @foreach (var logo in logoBusiness)
+    {
+        var logoImage = logo?.Content?.Value<IPublishedContent>("logoBusiness")?.Url() ?? "";
+
+        if (!string.IsNullOrEmpty(logoImage))
+        {
+            <img src="@logoImage" alt="logo">
+        }
+    }
+}
