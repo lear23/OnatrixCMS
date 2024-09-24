@@ -1,0 +1,48 @@
+﻿@using OnatrixCMS.Controllers
+@using OnatrixCMS.ViewModels
+@model OnatrixCMS.ViewModels.ContactFormViewModel
+
+<link rel="stylesheet" href="/css/contact.css">
+<script src="/Scripts/form.js" defer></script>
+<script src="/Scripts/button.js" defer></script>
+
+@if (ViewData["success"] == null)
+{
+    @using (Html.BeginUmbracoForm<ContactSurfaceController>(nameof(ContactSurfaceController.HandleSubmit), FormMethod.Post, new { id = "contactForm" }))
+    {
+        <div class="form-contact">
+            <div class="form-input-group">
+                <input asp-for="Name" class="form-input" placeholder="Name" />
+                <span asp-validation-for="Name" class="form-input-error"></span>
+            </div>
+            <div class="form-input-group">
+                <input asp-for="Phone" class="form-input" placeholder="Phone" />
+                <span asp-validation-for="Phone" class="form-input-error"></span>
+            </div>
+        </div>
+        <div class="form-contact">
+            <div class="form-input-group">
+                <input asp-for="Email" class="form-input" placeholder="Email Address" />
+                <span asp-validation-for="Email" class="form-input-error"></span>
+            </div>
+            <div class="form-input-group">
+                <select asp-for="Service" class="form-input" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="service1">Service 1</option>
+                    <option value="service2">Service 2</option>
+                    <option value="service3">Service 3</option>
+                    <option value="service4">Service 4</option>
+                </select>
+                <span asp-validation-for="Service" class="form-input-error"></span>
+            </div>
+        </div>
+         <button type="submit" class="form-button btn-primary">Submit</button>
+  
+
+    }
+}
+else
+{
+    <div class="success-message" id="successMessage">@ViewData["success"]</div>
+    <button id="backButton" class="form-button btn-primary" style="display: none;">Back</button>
+}

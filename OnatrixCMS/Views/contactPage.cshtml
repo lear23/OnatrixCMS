@@ -4,10 +4,15 @@
     Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
+    bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
+    bool.TryParse(ViewData["error_phone"]?.ToString()!, out bool error_phone);
+    bool.TryParse(ViewData["error_service"]?.ToString()!, out bool error_service);
 
 }
 
-<link rel="stylesheet" href="/css/contact.css">
+
+
 <main>
 
     <section class="nextproject">
@@ -26,53 +31,25 @@
                 </iframe>
             </div>
         </div>
-        <div class="container contact">
+        <div id="myform" class="container contact">
            
             <h4>Request a call back</h4>
             <h1>Let us know about your <br> next project</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
 
-            <div class="form-container-contact">
-                <div class="form-contact">
-                    <div class="form-input-group">
-                        <input id="name" name="name" type="text" placeholder="Name" class="form-input" />
-                        <span class="form-input-error">You must enter your name</span>
-                    </div>
-                    <div class="form-input-group">
-                        <input id="phone" name="phone" type="phone" placeholder="Phone Number" class="form-input" />
-                        <span class="form-input-error">You must enter your name</span>
-                    </div>
-                </div>
-                <div class="form-contact">
-                    <div class="form-input-group">
-                        <input id="email" name="email" type="email" placeholder="Email Address" class="form-input" />
-                        <span class="form-input-error">You must enter your name</span>
-                    </div>
+            <div id="myForm" class="form-container-contact">
 
-                    <div class="form-input-group">
-                        <select>
-                            <option value="" disabled selected>Select a service</option>
-                            <option value="service1">Service 1</option>
-                            <option value="service2">Service 2</option>
-                            <option value="service3">Service 3</option>
-                            <option value="service4">Service 4</option>
-                        </select>
-                    </div>
-
-
-                </div>
-
+                @await Html.PartialAsync("static/contactForm", new OnatrixCMS.ViewModels.ContactFormViewModel())
             </div>
 
-            <button type="submit" class="form-button btn-primary">Submit</button>
-        </div>
+         </div>      
+     
 
 
     </section>
-     <section class="container logos">
+    <section class="container logos">
         @await Html.PartialAsync("static/LogoBusiness")
     </section>
 
 </main>
-
 

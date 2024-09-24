@@ -74,7 +74,7 @@
 
 
 .form-input-group input, 
-.form-select select {
+.form-select  {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -91,9 +91,16 @@
 
 .form-input-error {
     color: red;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 5px;
-    display: none; 
+    
+}
+
+.success-message {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #D9C3A9;
 }
 
 .form-button {
@@ -105,7 +112,7 @@
     cursor: pointer;
     font-size: 16px;
     display: block;
-    margin: 0px auto; 
+    margin: 0px auto;
 }
 
 .form-button:hover {
@@ -113,12 +120,13 @@
 }
 
 select {
-    width: 100%; 
-    padding: 10px; 
+    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
+    color: #4F5955;
 }
 
 @media (max-width:792px){

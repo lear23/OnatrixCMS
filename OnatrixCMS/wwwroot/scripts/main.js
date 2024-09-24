@@ -1,21 +1,25 @@
 // --------------------Services-----------------
 
-window.addEventListener('scroll', function() {
-    var servicesSection = document.querySelector('.services');
-    var servicesH5 = document.querySelector('.services h5');
-    var servicesH1 = document.querySelector('.services h1');
-    var servicesPosition = servicesSection.getBoundingClientRect().top;
-    var screenPosition = window.innerHeight / 1.1;
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('scroll', function () {
+        var servicesSection = document.querySelector('.services');
+        if (servicesSection) {
+            var servicesH5 = document.querySelector('.services h5');
+            var servicesH1 = document.querySelector('.services h1');
+            var servicesPosition = servicesSection.getBoundingClientRect().top;
+            var screenPosition = window.innerHeight / 1.1;
 
-   
-    if (servicesPosition < screenPosition && servicesPosition > -servicesSection.offsetHeight) {
-        servicesH5.classList.add('animate');
-        servicesH1.classList.add('animate');
-    } else {
-        servicesH5.classList.remove('animate');
-        servicesH1.classList.remove('animate');
-    }
+            if (servicesPosition < screenPosition && servicesPosition > -servicesSection.offsetHeight) {
+                servicesH5.classList.add('animate');
+                servicesH1.classList.add('animate');
+            } else {
+                servicesH5.classList.remove('animate');
+                servicesH1.classList.remove('animate');
+            }
+        }
+    });
 });
+
 
 // -------------------------video------------------------------
 
