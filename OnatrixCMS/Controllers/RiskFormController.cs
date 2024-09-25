@@ -23,7 +23,7 @@ namespace OnatrixCMS.Controllers
 
                 return CurrentUmbracoPage();
             }
-            ViewData["success"] = "Form submitted successfully.";
+            ViewData["riskSuccess"] = "Form submitted successfully.";
             return CurrentUmbracoPage();
         }
     }
