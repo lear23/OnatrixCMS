@@ -34,13 +34,3 @@ public class ContactSurfaceController(IUmbracoContextAccessor umbracoContextAcce
 }
 
 
-
-//ViewData["name"] = form.Name;
-            //ViewData["phone"] = form.Phone;
-            //ViewData["email"] = form.Email;
-            //ViewData["service"] = form.Service;
-
-            //ViewData["error_name"] = string.IsNullOrEmpty(form.Name);
-            //ViewData["error_phone"] = string.IsNullOrEmpty(form.Phone);
-            //ViewData["error_email"] = string.IsNullOrEmpty(form.Email);
-            //ViewData["error_service"] = string.IsNullOrEmpty(form.Service);

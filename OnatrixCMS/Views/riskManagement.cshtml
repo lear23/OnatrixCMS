@@ -70,6 +70,13 @@
                 </div>
                
             </section>
+
+            <section class="container">
+                <div id="riskForm" class="form-container-contact">
+                    @await Html.PartialAsync("static/RiskForm", new OnatrixCMS.ViewModels.RiskFormViewModel())
+                 </div>
+            </section>
+
             <section class="nextproject">
                  @await Html.PartialAsync("static/NextProject")
             </section>

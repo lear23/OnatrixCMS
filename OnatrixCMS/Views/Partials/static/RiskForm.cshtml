@@ -1,0 +1,37 @@
+﻿@using OnatrixCMS.Controllers
+@using OnatrixCMS.ViewModels
+@model OnatrixCMS.ViewModels.RiskFormViewModel
+
+
+ <link rel="stylesheet" href="/css/PartialsSection/riskForm.css" />
+
+@if (ViewData["success"] == null)
+{
+    @using (Html.BeginUmbracoForm<RiskFormController>(nameof(RiskFormController.RiskSubmit), FormMethod.Post, new { id = "riskForm" }))
+    {
+
+        <h1 class="questionh1">Have a question?</h1>
+        <div class="contact-form-section">
+            <div class="input-group">
+                <input asp-for="Name" class="input-field" placeholder="Name" />
+                <span asp-validation-for="Name" class="input-error-message"></span>
+            </div>
+            <div class="input-group">
+                <input asp-for="Email" class="input-field" placeholder="Email Address" />
+                <span asp-validation-for="Email" class="input-error-message"></span>
+            </div>
+        </div>
+        <div class="contact-form-section">
+            <div class="input-group">
+                <textarea asp-for="Message" class="input-field" placeholder="Message"></textarea>
+                <span asp-validation-for="Message" class="input-error-message"></span>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    }
+}
+else
+{
+    <div class="success-message" id="successMessage">@ViewData["success"]</div>
+    <button id="backButton" class="submit-button" style="display: none;">Back</button>
+}
