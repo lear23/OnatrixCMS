@@ -4,8 +4,10 @@
 
 
  <link rel="stylesheet" href="/css/PartialsSection/riskForm.css" />
+<script src="/Scripts/riskForm.js" defer></script>
+<script src="/Scripts/button.js" defer></script>
 
-@if (ViewData["success"] == null)
+@if (ViewData["riskSuccess"] == null)
 {
     @using (Html.BeginUmbracoForm<RiskFormController>(nameof(RiskFormController.RiskSubmit), FormMethod.Post, new { id = "riskForm" }))
     {
