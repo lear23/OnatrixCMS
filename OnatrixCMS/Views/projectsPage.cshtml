@@ -75,19 +75,8 @@
                             <a class="tags-items">Finance</a>
                             <a class="tags-items">Pricing</a>    
                         </div>
-                        
-                        <div class="tags-form">
-                            <div class="tags-img">
-                                <img src="images/Mail.svg" alt="">
-                            </div>
-                            <h2>How can we help you?</h2>
-                            <p>online support 24/7. we are here to help you</p>
-                            <div class="input-container">
-                                <i class="fas fa-envelope"></i>
-                                <input type="text" placeholder="Email address">
-                            </div>
-                            
-                        </div>
+                        @await Html.PartialAsync("static/emailForm")
+                 
                     </div>
                 
                 
