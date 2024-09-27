@@ -18,12 +18,12 @@ namespace OnatrixCMS.Controllers
 
         public IActionResult RiskSubmit(RiskFormViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-
+                ViewData["riskSuccess"] = "Tu mensaje ha sido enviado con éxito.";
                 return CurrentUmbracoPage();
             }
-            ViewData["riskSuccess"] = "Form submitted successfully.";
+            //ViewData["riskSuccess"] = "Form submitted successfully.";
             return CurrentUmbracoPage();
         }
     }

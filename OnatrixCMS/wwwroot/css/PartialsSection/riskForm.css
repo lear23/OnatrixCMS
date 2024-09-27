@@ -43,3 +43,9 @@
     .submit-button:hover {
         background-color: #0056b3;
     }
+.success-message {
+    display: block;
+    color: #535656;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

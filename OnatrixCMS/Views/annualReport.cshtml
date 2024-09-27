@@ -1,0 +1,109 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model.Value<string>("pageTitle") ?? "Default Title"; 
+    var riskImages = Model?.Value<IPublishedContent>("riskImages")?.Url() ?? "";
+}
+
+ <link rel="stylesheet" href="/css/annualReport.css" />
+
+ <main>
+            <section class="container ">
+               <div class="annual">
+                  <div class="juva">
+                    <p><i class="fa-regular fa-calendar-days"></i>June 15, 2024</p>
+                    <p class="span">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at enim vestibulum, dapibus elit quis, pellentesque justo. Proin sit amet libero quis orci convallis mollis.
+                    </p>
+                    <img src="images/pj4 1.svg">  
+                    <h3>Suggestion for you</h3>
+                    <ul>
+                        <li>
+                            Financial planning is the process of helping clients meet their financial needs today and reach their dreams and goals tomorrow.    
+                        </li>
+                        <li> 
+                            Pellentesque fringilla augue quis dolor dapibus semper eget non nibh. Ut lobortis, nulla sed euismod posuere, quam magna scelerisque lectus, auctor iaculis quam ligula nec augue                      
+                        </li> 
+                        <li>
+                            In hac habitasse platea dictumst. Aliquam felis ante, tincidunt sed magna auctor, aliquet dapibus turpis.   
+                       </li>
+                    </ul>   
+                    <div class="facilisis">
+                        <img src="images/Img-47 1.svg" alt="">
+
+                        <div class="facilisisItems">
+                            <h3>Nunc facilisis ante quis gravida mollis </h3>        
+                            <p>
+                                Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus.
+                            </p>
+
+                            <p>
+                                Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum
+                           </p>
+                        </div>
+                        
+                    </div> 
+                    <h3>Nullam at blandit felis, ut efficitur lorem. Nulla pharetra turpis eget dictum condimentum</h3>
+                   
+                    <p>
+                        Cras posuere tristique urna sodales laoreet. Phasellus nibh nunc, porttitor vitae elementum eget, condimentum lobortis metus. Aenean imperdiet suscipit dui
+                    </p>   
+                    <p>    Integer quis massa sit amet diam feugiat molestie. Morbi egestas arcu eu sapien accumsan, et tempor velit viverra. Ut varius euismod malesuada. Vestibulum consectetur justo turpis. Vivamus varius purus consequat urna maximus molestie. Sed facilisis maximus quam id pretium. Donec ac orci vel quam semper tristique. Maecenas facilisis, urna sed congue pellentesque, justo augue semper nulla
+
+                    </p>
+
+                    <p>Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.</p>
+                    <img class="" src="images/Img-1-4 1.svg" alt="">
+                  <h3>Nunc facilisis ante quis gravida mollis</h3>
+                    <p>
+                        Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus. Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum
+                    </p>
+                    <p>
+                        Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.
+                    </p>
+                               
+                  
+
+                </div>
+
+ 
+                <div class="recent">
+                    <h2>Recent projects</h2>
+                    <div class="recentItems">
+                        <img src="images/Img.svg" alt="">
+                        <div class="item">
+                            <h4>Annual Report for <br>Juva Inc.</h4>
+                            <p><i class="fa-regular fa-calendar-days"></i> June 15, 2024</p>
+                        </div>
+                    </div>
+                    <div class="recentItems">
+                        <img src="images/Img.svg" alt="">
+                        <div class="item">
+                            <h4>Business Insights for <br> SP Group Inc.</h4>
+                            <p><i class="fa-regular fa-calendar-days"></i> May 17, 2024</p>
+                        </div>
+                    </div>
+                    <div class="recentItems">
+                        <img src="images/Img.svg" alt="">
+                        <div class="item">
+                            <h4>Financial Advisors to <br> Irra Group Inc.</h4>
+                            <p><i class="fa-regular fa-calendar-days"></i> February 6, 2024</p>
+                        </div>
+                    </div>
+                    <div class="recentItems2">
+                        <img src="images/Img.svg" alt="">
+                        <div class="item">
+                            <h4>Budget Planning for <br> Buccura Inc.</h4>
+                            <p><i class="fa-regular fa-calendar-days"></i> January 3, 2024</p>
+                        </div>
+                    </div>
+                 
+                 </div>
+               </div>
+
+            </section>
+
+			@await Html.PartialAsync("static/NextProject")
+         
+ </main>

@@ -2,6 +2,9 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
+    var currentPath = Context.Request.Path;
+    <p>Current Path: @currentPath</p> 
+     ViewBag.Title = Model.Value<string>("pageTitle") ?? "Default Title"; 
 
     var riskImages = Model?.Value<IPublishedContent>("riskImages")?.Url() ?? "";
 }
@@ -10,6 +13,8 @@
 
 
  <main>
+
+
 
             <section class="container">
 
@@ -72,7 +77,7 @@
             </section>
 
             <section class="container">
-                <div id="riskForm" class="form-container-contact">
+                <div id="riskForm2" class="form-container-contact">
                     @await Html.PartialAsync("static/RiskForm", new OnatrixCMS.ViewModels.RiskFormViewModel())
                  </div>
             </section>

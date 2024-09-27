@@ -1,0 +1,119 @@
+.annual {
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    margin: 80px 0px;
+    gap:60px;
+}
+
+
+.juva {
+    width: 66%; 
+    text-align: left; 
+    padding-right: 60px;
+    border-right: 1px solid rgb(216, 216, 216);
+}
+
+
+.juva h3{
+    text-align: left;
+    color: #4F5955;
+    font-weight: bold;   
+    
+}
+.juva p{
+    text-align: left;
+    color: #4F5955;
+    margin-bottom: 15px;  
+}
+
+.juva .span{
+    color: #4F5955;
+    font-weight: bold;
+  
+}
+.juva ul{
+    padding: 0 10px;
+}
+.juva li{
+    text-align: left;
+    color: #4F5955;  
+    padding-top: 20px;
+}
+.facilisis{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    margin: 20px 0px;
+    gap: 15px;
+   
+}
+.facilisis img{
+    width: 100%;
+    height: auto;
+    object-fit:fill;
+   
+}
+.juva .facilisis .facilisisItems h3{
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.juva .facilisis .facilisisItems p{
+    padding-bottom: 10px;
+}
+
+
+.recent{
+    display: flex;
+    flex-direction: column;
+     width: 34%; 
+     text-align: center;
+     text-align: left;
+     gap: 20px;
+    
+ }
+ .recent h2{
+     color: #4F5955;
+     font-weight: 700;
+ }
+ .recent h4{
+    color: #4F5955;
+    font-weight: 700;
+}
+   
+                       
+ .recent p{
+     width: 350px;
+     height: auto;
+     color: #4F5955;
+     padding-top: 5px;
+    
+ }
+
+
+ .recentItems {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 20px;
+    width: 100%; 
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 20px;
+}
+
+.recentItems img {
+    width: 100%; 
+    height: auto;
+}
+
+
+.recentItems2 {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 20px;
+    width: 100%; 
+
+    padding-bottom: 20px;
+}
