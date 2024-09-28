@@ -7,10 +7,16 @@
   var rootContents = UmbracoHelper.ContentAtRoot();
   var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
   var nextImg = settings?.Value<IPublishedContent>("nextProjectImg")?.Url() ?? ""; 
-       
+
+    var currentPageAlias = Umbraco.AssignedContentItem.ContentType.Alias;
+    var isContactPage = currentPageAlias == "contactPage";
+
+
 }     
   <link rel="stylesheet" href="/css/PartialsSection/Nextproject.css">
-         <section class="nextproject">
+
+
+<section class ="nextproject @(isContactPage ? "custom-background" : "")">
                 <div class="container">            
                     <img  src="@nextImg" alt="">
                     <div class="know">

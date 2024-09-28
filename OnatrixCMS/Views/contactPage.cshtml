@@ -4,6 +4,10 @@
     Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
+    var isContactPage = Umbraco.AssignedContentItem.ContentType.Alias == "contactPage";
+    ViewData["IsContactPage"] = isContactPage;
+    
+
     bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
     bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
     bool.TryParse(ViewData["error_phone"]?.ToString()!, out bool error_phone);
@@ -15,9 +19,9 @@
 
 <main>
 
-    <section class="nextproject">
-        @await Html.PartialAsync("static/NextProject")
-    </section>
+
+    @await Html.PartialAsync("static/NextProject")
+ 
 
     <section class="contactSection">
 

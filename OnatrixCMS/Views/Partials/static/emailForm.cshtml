@@ -1,13 +1,27 @@
-﻿  
+﻿  @using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper 
+
+@{
+
+  var rootContents = UmbracoHelper.ContentAtRoot();
+  var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+  var emailFormImg = settings?.Value<IPublishedContent>("emailFormImg")?.Url() ?? ""; 
+
+   
+
+
+}    
   
-  <link rel="stylesheet" href="/css/emailForm.css">
+  <link rel="stylesheet" href="/css/PartialsSection/emailForm.css">
   
    <div class="tags-form">
         <div class="tags-img">
-            <img src="images/Mail.svg" alt="">
+            <img src="@emailFormImg" alt="">
         </div>
-        <h2>How can we help you?</h2>
-        <p>online support 24/7. we are here to help you</p>
+        <h2>How can we help you?</h2>  
+        <p>online support 24/7, we are here to help you</p>
         <div class="input-container">
             <i class="fas fa-envelope"></i>
             <input type="text" placeholder="Email address">

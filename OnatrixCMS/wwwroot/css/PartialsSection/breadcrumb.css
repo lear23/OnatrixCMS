@@ -1,0 +1,79 @@
+﻿/* --------------BradCrumb--------------- */
+
+.onatrixHeadline {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+    height: auto; /* Asegura que el contenedor se ajuste al contenido */
+}
+
+    .onatrixHeadline img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+        object-fit: cover; /* Evita la distorsión y recorta la imagen si es necesario */
+        z-index: 1;
+    }
+
+.headline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 2;
+    padding: 50px;
+    text-align: center;
+}
+
+    .headline .headline-home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .headline span {
+        color: #d9c3a9;
+    }
+
+    .headline .headline-home li {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .headline .headline-home a {
+        color: #4F5955;
+        text-decoration: none;
+    }
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .headline {
+        padding: 30px; /* Ajuste del padding en pantallas más pequeñas */
+        gap: 15px;
+    }
+
+    .onatrixHeadline img {
+        height: auto; /* Deja que la altura se ajuste automáticamente en pantallas más pequeñas */
+        object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin recortes */
+    }
+
+    .headline-home {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        padding: 20px;
+    }
+
+    .headline-home {
+        gap: 5px;
+    }
+}
