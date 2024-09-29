@@ -3,22 +3,15 @@
 
 @{
 	Layout = "mainLayout.cshtml";
-    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;        
 
-
-
-      
 }
 
 
 
+<div class="custom-background" >
     @await Html.PartialAsync("static/OurServicesSection")
-
-
-
-
-
-
+</div>
 
  <section class="nextproject">
       @await Html.PartialAsync("static/NextProject")  

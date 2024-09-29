@@ -20,10 +20,10 @@ namespace OnatrixCMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewData["riskSuccess"] = "Tu mensaje ha sido enviado con éxito.";
+                ViewData["riskSuccess"] = "Form submitted successfully.";
                 return CurrentUmbracoPage();
             }
-            //ViewData["riskSuccess"] = "Form submitted successfully.";
+
             return CurrentUmbracoPage();
         }
     }

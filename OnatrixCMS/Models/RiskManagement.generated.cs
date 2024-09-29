@@ -64,5 +64,21 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("riskImages")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops RiskImages => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "riskImages");
+
+		///<summary>
+		/// RiskImages2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("riskImages2")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops RiskImages2 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "riskImages2");
+
+		///<summary>
+		/// RiskImages3
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("riskImages3")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops RiskImages3 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "riskImages3");
 	}
 }

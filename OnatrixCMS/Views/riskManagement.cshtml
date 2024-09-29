@@ -2,11 +2,12 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
-    var currentPath = Context.Request.Path;
-    <p>Current Path: @currentPath</p> 
+   
      ViewBag.Title = Model.Value<string>("pageTitle") ?? "Default Title"; 
 
     var riskImages = Model?.Value<IPublishedContent>("riskImages")?.Url() ?? "";
+    var riskImages2 = Model?.Value<IPublishedContent>("riskImages2")?.Url() ?? "";
+    var riskImages3 = Model?.Value<IPublishedContent>("riskImages3")?.Url() ?? "";
 }
 
  <link rel="stylesheet" href="/css/risk.css" />
@@ -29,7 +30,7 @@
                      @await Html.PartialAsync("static/emailForm")
                 </div>
                 <div class="formAboutUs">
-                    <img src="images/image-21-min 2.svg" alt="">
+                    <img src="@riskImages2" alt="">
                     <h1>key point</h1>
                     <ul>
                         <li>
@@ -59,7 +60,7 @@
                         And once you have a plan in place, you may feel more confident knowing that your advisor will stay with you over time, helping you track your progress toward your goals and making adjustments along the way when your life or dreams change.
 
                     </p>
-                    <img class="" src="images/post2 1.svg" alt="">
+                    <img class="" src="@riskImages3" alt="">
                     <h1>We’ll help you achieve financial confidence</h1>
                     <p>Working with a financial advisor may help you come away feeling more confident knowing that you have the support you need to help:</p>
                     <ul>

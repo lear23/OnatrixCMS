@@ -1,15 +1,25 @@
 ﻿@using Microsoft.IdentityModel.Tokens
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-
 @{
-   var globalPartials = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "globalPartials");
+    var globalPartials = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "globalPartials");
 
-   
-   
+    string backgroundColor = "#EAEAEA";
+
+    var currentPage = Umbraco.AssignedContentItem;
+
+
+    if (currentPage != null && currentPage.ContentType.Alias == " servicesPage")
+    {
+
+        backgroundColor = "#fff";
+    }
+
 }
+<link rel="stylesheet" href="/css/PartialsSection/servicePartiel.css">
 
-<section class="services">
+
+<section class="services" style="background-color: @backgroundColor;">
     <div class="container">
         <h5>OUR SERVICES</h5>
         <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
@@ -25,9 +35,9 @@
                 {
                     <div class="items">
                         <h3>@serviceTitle</h3>
-                        <img src="@serviceImg" alt="">
+                        <a href="/services/risk-management/"> <img src="@serviceImg" alt=""></a>
 
-                       
+
                         @if (!string.IsNullOrEmpty(serviceText?.ToString()))
                         {
                             <p>@serviceText</p>
