@@ -3,7 +3,10 @@
 @{
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model.Value<string>("pageTitle") ?? "Default Title"; 
-    var riskImages = Model?.Value<IPublishedContent>("riskImages")?.Url() ?? "";
+    var annualImg1 = Model?.Value<IPublishedContent>("annualImg1")?.Url() ?? "";
+    var annualImg2 = Model?.Value<IPublishedContent>("annualImg2")?.Url() ?? "";
+    var annualImg3 = Model?.Value<IPublishedContent>("annualImg3")?.Url() ?? "";
+    var annualImg4 = Model?.Value<IPublishedContent>("annualImg4")?.Url() ?? "";
 }
 
  <link rel="stylesheet" href="/css/annualReport.css" />
@@ -18,7 +21,7 @@
                     <p class="span">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at enim vestibulum, dapibus elit quis, pellentesque justo. Proin sit amet libero quis orci convallis mollis.
                     </p>
-                    <img src="images/pj4 1.svg">  
+                    <img src="@annualImg1">  
                     <h3>Suggestion for you</h3>
                     <ul>
                         <li>
@@ -32,7 +35,7 @@
                        </li>
                     </ul>   
                     <div class="facilisis">
-                        <img src="images/Img-47 1.svg" alt="">
+                        <img src="@annualImg2" alt="">
 
                         <div class="facilisisItems">
                             <h3>Nunc facilisis ante quis gravida mollis </h3>        
@@ -56,7 +59,7 @@
                     </p>
 
                     <p>Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.</p>
-                    <img class="" src="images/Img-1-4 1.svg" alt="">
+                    <img class="" src="@annualImg3" alt="">
                   <h3>Nunc facilisis ante quis gravida mollis</h3>
                     <p>
                         Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus. Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum
@@ -73,28 +76,28 @@
                 <div class="recent">
                     <h2>Recent projects</h2>
                     <div class="recentItems">
-                        <img src="images/Img.svg" alt="">
+                    <img src="@annualImg4" alt="">
                         <div class="item">
                             <h4>Annual Report for <br>Juva Inc.</h4>
                             <p><i class="fa-regular fa-calendar-days"></i> June 15, 2024</p>
                         </div>
                     </div>
                     <div class="recentItems">
-                        <img src="images/Img.svg" alt="">
+                    <img src="@annualImg4" alt="">
                         <div class="item">
                             <h4>Business Insights for <br> SP Group Inc.</h4>
                             <p><i class="fa-regular fa-calendar-days"></i> May 17, 2024</p>
                         </div>
                     </div>
                     <div class="recentItems">
-                        <img src="images/Img.svg" alt="">
+                    <img src="@annualImg4" alt="">
                         <div class="item">
                             <h4>Financial Advisors to <br> Irra Group Inc.</h4>
                             <p><i class="fa-regular fa-calendar-days"></i> February 6, 2024</p>
                         </div>
                     </div>
                     <div class="recentItems2">
-                        <img src="images/Img.svg" alt="">
+                    <img src="@annualImg4" alt="">
                         <div class="item">
                             <h4>Budget Planning for <br> Buccura Inc.</h4>
                             <p><i class="fa-regular fa-calendar-days"></i> January 3, 2024</p>

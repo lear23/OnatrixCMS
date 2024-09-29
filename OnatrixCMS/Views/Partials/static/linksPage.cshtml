@@ -1,40 +1,40 @@
-﻿
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+﻿@* 
+ @using Umbraco.Cms.Web.Common.PublishedModels;
+ @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+ @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 
-@{
-    var rootContents = UmbracoHelper.ContentAtRoot();
-    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+ @{
+     var rootContents = UmbracoHelper.ContentAtRoot();
+     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
 
    
 
-    var navbarList = settings?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("navbarOnatrix") ?? null;
-}
+     var navbarList = settings?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("navbarOnatrix") ?? null;
+ }
 
-    @if (navbarList != null)
-    {
-        @foreach (var navItem in navbarList)
-        {
+     @if (navbarList != null)
+     {
+         @foreach (var navItem in navbarList)
+         {
 
-            var linkName = navItem?.Content?.Value<string>("navbarList");
-            var linkUrl = navItem?.Content?.Value<string>("navbarLinkUrl")?.Url() ?? "#";
-            switch (linkName?.ToLower())
-            {
-                case "about":
-                <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
-                    break;
-                case "services":
-                <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
-                    break;
-                case "projects":
-                <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
-                    break;
-                case "contact":
-                <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
-                    break;
-            }
-        }
-    }
+             var linkName = navItem?.Content?.Value<string>("navbarList");
+             var linkUrl = navItem?.Content?.Value<string>("navbarLinkUrl")?.Url() ?? "#";
+             switch (linkName?.ToLower())
+             {
+                 case "about":
+                 <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
+                     break;
+                 case "services":
+                 <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
+                     break;
+                 case "projects":
+                 <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
+                     break;
+                 case "contact":
+                 <a href="@linkUrl" title="@linkUrl" target="_blank" class="nav-link"></a>
+                     break;
+             }
+         }
+     }
 
- 
+  *@
