@@ -30,8 +30,8 @@
 
   
  <main>
-<section class="container showcase">
-                <div class="showase-img">
+    <section class="container showcase">
+                <div class="showcaseImg">
                     <img src="@aboutPageImg" alt="">
                     <p>@Model?.Value("aboutPageText")</p>
                 </div>
@@ -41,8 +41,8 @@
                
                 </div>             
                                 
-            </section>
-           <section class="reviews">
+    </section>
+    <section class="reviews">
                 <div class="container">
                     <h5>@Model?.Value("reviewsSectionH5")</h5>
                     <h1>@Html.Raw(formattedH1Content)</h1>
@@ -54,14 +54,14 @@
                    <h4 class="swebank">@Model?.Value("reviewsSectionSwebank")</h4>
                 </div>
                 <img class="bgKevin" src="@reviewsBgImg" alt="">
-            </section>
-           <section class="ourexpert">
+    </section>
+    <section class="ourexpert">
                 <div class="container-ourExpert">
                     <h3>@Model?.Value("ourExpertSectionH3")</h3>
                      <h1>@Html.Raw(formattedH1Content2)</h1>
                 </div>
-                <div class="container expertcard">
-                
+                <div class="container ">
+                  <div class="expertcard">
                     <div class="card">
                       <img src="@cardImg" alt="">
                       <span>@Model?.Value("ourExpertSectionCardSpan")</span>
@@ -77,8 +77,9 @@
                       <span>@Model?.Value("ourExpertSectionCardSpan3")</span>
                       <p>@Model?.Value("ourExpertSectionCardP3")</p>
                     </div>
+                  </div>
                    <div class="expertcard2">
-                    <div class="card">
+                      <div class="card">
                         <img src="@cardImg4" alt="">
                         <span>@Model?.Value("ourExpertSectionCardSpan4")</span>
                         <p>@Model?.Value("ourExpertSectionCardP4")</p>
@@ -98,10 +99,10 @@
                         <span>@Model?.Value("ourExpertSectionCardSpan7")</span>
                         <p>@Model?.Value("ourExpertSectionCardP7")</p>
                       </div>
-                    </div>
-                   </div>             
+                   </div>
+                 </div>             
                   
-            </section> 
+    </section> 
              <section class="nextproject">
                      @await Html.PartialAsync("static/NextProject")
             
