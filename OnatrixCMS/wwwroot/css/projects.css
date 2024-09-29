@@ -1,29 +1,31 @@
 /* -------------OUR PROJECT---------------- */
 
 
+
 .section-projects {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  margin-top:80px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    gap:30px;
 }
 @media (max-width: 992px) {
     .section-projects {
-        display: block;
-      
+        display: block;  
         
     }
 
 }
 
-
-
-    .articlesProjects {
-        width: 60%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+.articlesProjects {
+    width: 100%;
+    justify-content:space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-right:40px;
+    border-right: 1px solid #ddd;
+    margin-bottom:80px;
+}
 
     .articles-items {
         display: flex;
@@ -87,84 +89,65 @@
                 color: #a09f9f;
             }
 
-    /* ----------- TAGS ----------- */
+
+
+
+ ----------- TAGS ----------- 
+.tags {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+}
+
+    .tags h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+}
+
+.tags-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.tags-items {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: #333;
+}
+
+    .tags-items:hover {
+        background-color: #4e4d4d;
+        color: #d9c3a9;
+    }
+
+@media (max-width: 1200px) {
     .tags {
-        width: 25%;
-        display: flex;
+        width: 100%;
         flex-direction: column;
-        padding-left: 20px;
-        border-left: 1px solid #ddd;
+        margin-top: 50px;
+        gap: 30px;
+        border-left: none;
     }
 
         .tags h2 {
-            font-size: 24px;
-            color: #333;
             margin-bottom: 20px;
         }
 
-    .tags-projects {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .tags-items {
-        border: 1px solid #ddd;
-        padding: 10px 15px;
-        margin-bottom: 10px;
-        border-radius: 25px;
-        font-size: 14px;
-        color: #333;
-    }
-
-        .tags-items:hover {
-            background-color: #4e4d4d;
-            color: #d9c3a9;
-        }
-
-    /* ----------- FORM ----------- */
-    .tags-form {
-        background-color: #4f5955;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        padding: 30px;
-        border-radius: 8px;
-        color: #d9d9d9;
-        margin-top: 20px;
-    }
-
-        .tags-form input {
-            padding: 10px;
-            border: none;
-            margin-top: 15px;
-            width: 100%;
-            border-radius: 4px;
-        }
-
-        .tags-form h2 {
-            color: #fff;
-        }
-
-    .input-container {
-        position: relative;
+    .tags-projects{
         width: 100%;
     }
+}
 
-        .input-container i {
-            position: absolute;
-            right: 40px;
-            top: 60%;
-            transform: translateY(-50%);
-            color: #999;
-        }
 
-        .input-container input {
-            padding-left: 35px;
-        }
-
-    /* ----------- PAGINATION ----------- */
+  
+     ----------- PAGINATION ----------- 
     .pagination {
         display: flex;
         justify-content: center;
@@ -183,7 +166,7 @@
         border-radius: 50%;
     }
 
-    /* ----------- MEDIA QUERIES ----------- */
+/*     ----------- MEDIA QUERIES ----------- */
     @media (max-width: 1200px) {
         section {
             flex-direction: column;
@@ -194,21 +177,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
-        .tags {
-            width: 100%;
-            flex-direction: column;
-            margin-top: 50px;
-            gap: 30px;
-            border-left: none;
-        }
-
-            .tags h2 {
-                margin-bottom: 20px;
-            }
-
-        .tags-projects, .tags-form {
-            width: 100%;
-        }
+    
 
         .articles-items, .articles-items4 {
             flex-direction: column;

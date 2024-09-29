@@ -6,10 +6,12 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height:auto;
   padding: 30px;
   border-radius: 8px;
   color: #d9d9d9;
   margin-top: 20px;
+  margin-right:20px;
 }
 
 .tags-form img {
@@ -29,6 +31,10 @@
   color: #fff;
 }
 
+.tags-form p {
+  color: #fff;
+}
+
 .input-container {
   position: relative;
   width: 100%;
@@ -44,4 +50,11 @@
 
 .input-container input {
   padding-left: 35px;
+}
+
+@media (max-width: 1200px) {
+   
+    .tags-form {
+        width: 100%;
+    }
 }

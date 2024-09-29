@@ -5,7 +5,7 @@
 	 ViewBag.Title = Model?.Value("pageTitle") ?? null;
 }
 
-
+  <link rel="stylesheet" href="/css/projects.css" />
 
 <section class=" container">
           
@@ -75,9 +75,11 @@
                             <a class="tags-items">Finance</a>
                             <a class="tags-items">Pricing</a>    
                         </div>
-                        @await Html.PartialAsync("static/emailForm")
+                        <div class="tags-form">
+                             @await Html.PartialAsync("static/emailForm")
+                        </div>
                  
-                    </div>
+           </div>
                 
                 
 
