@@ -35,11 +35,6 @@
 
 }
 
-<!-- @if(!string.IsNullOrEmpty(ViewBag.Title))
-{
-   
-    @await Html.PartialAsync("static/breadcrumb")
-} -->
 
 
 <main>
@@ -72,21 +67,15 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="form-container">
+            
+               
+                <div id="requestForm" class="form-container">
                     <div class="formTitle"><h1>Request a Call Back</h1></div>
                     <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Email address">
-                    <input type="text" placeholder="Phone">
-                    <select>
-                        <option value="" disabled selected>Select a service</option>
-                        <option value="service1">Service 1</option>
-                        <option value="service2">Service 2</option>
-                        <option value="service3">Service 3</option>
-                        <option value="service4">Service 4</option>
-                    </select>
-                    <a href="#">Submit</a>
+
+                    @await Html.PartialAsync("Partials/static/homeForm", new OnatrixCMS.ViewModels.ContactFormViewModel())
+
+
                 </div>
             </div>
         </div>
@@ -189,3 +178,18 @@
 
 
 </main>
+
+
+
+
+@*                     <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Email address">
+                    <input type="text" placeholder="Phone">
+                    <select>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="service1">Service 1</option>
+                        <option value="service2">Service 2</option>
+                        <option value="service3">Service 3</option>
+                        <option value="service4">Service 4</option>
+                    </select>
+                    <a href="#">Submit</a> *@

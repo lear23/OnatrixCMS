@@ -7,11 +7,11 @@
 
 @if (ViewData["riskSuccess"] != null) 
 {
-    <span id="successRiskMessage" class="success-message">@ViewData["riskSuccess"]</span>
+    <span id="successRiskMessage" class="success-message2">@ViewData["riskSuccess"]</span>
 }
 else
 {
-    @using (Html.BeginUmbracoForm<RiskFormController>(nameof(RiskFormController.RiskSubmit), FormMethod.Post, new { id = "riskForm", novalidate = "novalidate" }))
+    @using (Html.BeginUmbracoForm<RiskSurfaceController>(nameof(RiskSurfaceController.RiskSubmit), FormMethod.Post, new { id = "riskForm", novalidate = "novalidate" }))
     {
         <h1 class="questionh1">Have a question?</h1>
 

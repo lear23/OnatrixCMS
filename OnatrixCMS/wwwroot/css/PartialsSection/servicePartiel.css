@@ -7,9 +7,10 @@
     background-color: #EAEAEA;
 }
 
-.custom-background {
-    background-color: #fff;
-}
+
+    .services.custom-background {
+        background-color: #fff;
+    }
 
 
 
@@ -101,3 +102,25 @@
         font-size: 14px;
         padding: 0px 35px;
     }
+
+
+
+/*     ----------- PAGINATION ----------- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top:30px;
+}
+
+    .pagination a {
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+.numberPagination {
+    border: 1px solid #999;
+    border-radius: 50%;
+}

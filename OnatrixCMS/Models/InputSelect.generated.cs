@@ -50,21 +50,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Errror Message
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("errrorMessage")]
-		public virtual string ErrrorMessage => this.Value<string>(_publishedValueFallback, "errrorMessage");
-
-		///<summary>
-		/// Is Required
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("isRequired")]
-		public virtual bool IsRequired => this.Value<bool>(_publishedValueFallback, "isRequired");
-
-		///<summary>
 		/// Label Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -81,26 +66,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PlaceholderText => this.Value<string>(_publishedValueFallback, "placeholderText");
 
 		///<summary>
-		/// Regular Expression Pattern
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("regularExpressionPattern")]
-		public virtual string RegularExpressionPattern => this.Value<string>(_publishedValueFallback, "regularExpressionPattern");
-
-		///<summary>
 		/// Unique name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("uniqueName")]
 		public virtual string UniqueName => this.Value<string>(_publishedValueFallback, "uniqueName");
-
-		///<summary>
-		/// User Regular Expression
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("userRegularExpression")]
-		public virtual bool UserRegularExpression => this.Value<bool>(_publishedValueFallback, "userRegularExpression");
 	}
 }

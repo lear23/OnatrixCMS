@@ -4,7 +4,7 @@
 @{
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null; 
-    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var addressOnatrix = settings?.Value<string>("addressOnatrix") ?? "";
    
 }
 
@@ -12,7 +12,8 @@
 
     <div class="container container-top">
         <div class="address">
-           Klarabergsviadukten 90, 111 64 Stockholm
+           <!-- Klarabergsviadukten 90, 111 64 Stockholm -->
+           @addressOnatrix
         </div>  
         <div class="socialmedia">
             @await Html.PartialAsync("socialmedia.cshtml")

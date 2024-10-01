@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using OnatrixCMS.Contexts;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,6 +9,8 @@ builder.CreateUmbracoBuilder()
 	.AddDeliveryApi()
 	.AddComposers()
 	.Build();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+	options.UseSqlServer(builder.Configuration.GetConnectionString("umbracoDbDSN")));
 
 WebApplication app = builder.Build();
 

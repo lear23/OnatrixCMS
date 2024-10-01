@@ -15,7 +15,7 @@
 
 
 
-<!-- 
+
 <section class="navbar">
     <div class="container">
     
@@ -29,6 +29,7 @@
         </label>
 
         
+     
         <nav>
             @if (navbarList != null)
             {
@@ -37,33 +38,22 @@
                     var linkName = navItem?.Content?.Value<string>("navbarList");
                     var linkUrl = navItem?.Content?.Value<string>("navbarLinkUrl") ?? "#";
 
-                    switch (linkName?.ToLower())
+                    if (!string.IsNullOrEmpty(linkName))
                     {
-                        case "about":
-                            <a href="@linkUrl" title="@linkName" target="_blank" class="nav-link"></a>
-                            break;
-                        case "services":
-                            <a href="@linkUrl" title="Services" target="_blank" class="nav-link"></a>
-                            break;
-                        case "projects":
-                            <a href="@linkUrl" title="Projects" target="_blank" class="nav-link">Projects</a>
-                            break;
-                        case "contact":
-                            <a href="@linkUrl" title="Contact" target="_blank" class="nav-link">Contact</a>
-                            break;
+                        <a href="@linkUrl" title="@linkName" class="nav-link">@linkName</a>
                     }
                 }
             }
         </nav>
 
         <!-- Ícono de búsqueda -->
-        <!-- <div class="search">
+        <div class="search">
             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
     </div>
-</section> --> 
+</section> 
 
-
+<!-- 
 <section class="navbar">
             <div class="container">
                 <a class="logo" href="/">
@@ -83,7 +73,7 @@
                     <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                 </div>
             </div>
-</section> 
+</section>  -->
 
 
 

@@ -4,22 +4,15 @@
 @{
     var globalPartials = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "globalPartials");
 
-    string backgroundColor = "#EAEAEA";
+    var currentPageAlias = Umbraco.AssignedContentItem.ContentType.Alias;
+    var isContactPage = currentPageAlias == "servicesPage";
 
-    var currentPage = Umbraco.AssignedContentItem;
-
-
-    if (currentPage != null && currentPage.ContentType.Alias == " servicesPage")
-    {
-
-        backgroundColor = "#fff";
-    }
 
 }
 <link rel="stylesheet" href="/css/PartialsSection/servicePartiel.css">
 
 
-<section class="services" style="background-color: @backgroundColor;">
+<section class="services @(isContactPage ? "custom-background" : "")">
     <div class="container">
         <h5>OUR SERVICES</h5>
         <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
@@ -50,5 +43,11 @@
                 }
             }
         </div>
+    </div>
+    <div class="pagination">
+        <a href="#">Prev</a>
+        <a class="numberPagination" href="#">1</a>
+        <a class="numberPagination" href="#">2</a>
+        <a href="#">Next</a>
     </div>
 </section>

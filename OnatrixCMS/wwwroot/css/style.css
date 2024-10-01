@@ -466,22 +466,6 @@ header, main {
         color: #555;
     }
 
-    .form-container a {
-        display: block;
-        text-align: center;
-        padding: 10px 20px;
-        background-color: #4F5955;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        transition: background-color 0.3s ease;
-    }
-
-        .form-container a:hover {
-            background-color: #3c4844;
-        }
 
 
     @media (max-width: 768px) {
@@ -518,7 +502,7 @@ header, main {
             font-size: 14px;
         }
 
-        .form-container a {
+        .form-container .requestBtn {
             font-size: 14px;
         }
     }

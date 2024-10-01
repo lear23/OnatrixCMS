@@ -1,0 +1,48 @@
+﻿@using OnatrixCMS.Controllers
+@using OnatrixCMS.ViewModels
+@model OnatrixCMS.ViewModels.ContactFormViewModel
+
+
+
+<script src="/Scripts/homeForm.js" defer></script>
+
+<link rel="stylesheet" href="/css/PartialsSection/homeForm.css">
+
+
+        @if (ViewData["success"] == null)
+        {
+    @using (Html.BeginUmbracoForm<ContactSurfaceController>(nameof(ContactSurfaceController.HomeSubmit), FormMethod.Post, new { id = "homeForm" }))
+                {
+                    <div class="form-input-group">
+                        <input type="text" asp-for="Name" placeholder="Name" class="form-input" />
+                        <span asp-validation-for="Name" class="form-input-error"></span>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="text" asp-for="Email" placeholder="Email address" class="form-input" />
+                        <span asp-validation-for="Email" class="form-input-error"></span>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="text" asp-for="Phone" placeholder="Phone" class="form-input" />
+                        <span asp-validation-for="Phone" class="form-input-error"></span>
+                    </div>
+                    <div class="form-input-group">
+                        <select asp-for="Service" class="form-input" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="service1">Service 1</option>
+                            <option value="service2">Service 2</option>
+                            <option value="service3">Service 3</option>
+                            <option value="service4">Service 4</option>
+                        </select>
+                        <span asp-validation-for="Service" class="form-input-error"></span>
+                    </div>
+                    <button type="submit" class="requestBtn">Submit</button>
+                }
+        }
+        else
+        {
+            <div class="success-message" id="successMessage">@ViewData["success"]</div>
+             <button id="backButton2" class="requestBtn" style="display: none;">Back</button>
+            
+        }
+
+    

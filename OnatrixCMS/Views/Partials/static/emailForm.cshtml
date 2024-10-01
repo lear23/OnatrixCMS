@@ -1,4 +1,4 @@
-﻿  @using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper 
 
@@ -15,6 +15,7 @@
 }    
   
   <link rel="stylesheet" href="/css/PartialsSection/emailForm.css">
+<script src="/Scripts/emailForm.js" defer></script>
 
 <div class="tags-form">
         <div class="tags-img">
@@ -22,9 +23,9 @@
         </div>
         <h2>@settings?.Value("emailFormH2")</h2>  
         <p>@settings?.Value("emailFormP") </p>
-        <div class="input-container">
-            <i class="fas fa-envelope"></i>
-            <input type="text" placeholder="Email address">
-        </div>
+    <div class="input-container">
+        <i class="fas fa-envelope" id="submitEmail" style="cursor: pointer;"></i>
+        <input type="text" placeholder="Email address" required>
+    </div>
 
 </div>
