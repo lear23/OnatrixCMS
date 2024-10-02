@@ -1,35 +1,43 @@
-﻿@using Microsoft.IdentityModel.Tokens
+﻿
+ @using Microsoft.IdentityModel.Tokens
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
 @{
     var globalPartials = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "globalPartials");
 
     var currentPageAlias = Umbraco.AssignedContentItem.ContentType.Alias;
     var isContactPage = currentPageAlias == "servicesPage";
 
+    
+    int totalServices = 8; 
+   
+    int servicesPerPage = 6; 
 
+  
+    int currentPage = 1; 
+    
+    int totalPages = (int)Math.Ceiling((double)totalServices / servicesPerPage); 
 }
+
 <link rel="stylesheet" href="/css/PartialsSection/servicePartiel.css">
 
-
-<section class="services @(isContactPage ? "custom-background" : "")">
+<section id="serviceContainer" class="services @(isContactPage ? "custom-background" : "")">
     <div class="container">
         <h5>OUR SERVICES</h5>
         <h1>We Provide The Solutions <br> To Grow Your Business Faster</h1>
         <div class="servicesCard">
-            @for (int i = 1; i <= 6; i++)
+            @for (int i = 1; i <= totalServices; i++)  
             {
-
                 var serviceTitle = globalPartials?.Value($"servicesSectionItemTitle{i}");
                 var serviceImg = globalPartials?.Value<IPublishedContent>($"servicesSectionItemImg{i}")?.Url();
                 var serviceText = globalPartials?.Value($"servicesSectionItemText{i}");
 
                 if (!string.IsNullOrEmpty(serviceTitle?.ToString()) && !string.IsNullOrEmpty(serviceImg))
                 {
-                    <div class="items">
+                    <div class="items" data-index="@i" style="display:none">  
                         <h3>@serviceTitle</h3>
                         <a href="/services/risk-management/"> <img src="@serviceImg" alt=""></a>
-
 
                         @if (!string.IsNullOrEmpty(serviceText?.ToString()))
                         {
@@ -37,17 +45,95 @@
                         }
                         else
                         {
-                            <p>Theres no texts here</p> 
+                            <p>There's no text here</p>
                         }
                     </div>
                 }
             }
         </div>
     </div>
-    <div class="pagination">
-        <a href="#">Prev</a>
-        <a class="numberPagination" href="#">1</a>
-        <a class="numberPagination" href="#">2</a>
-        <a href="#">Next</a>
+
+    <!-- Pagination -->
+    <div id="pagination" class="pagination">
+        <a href="#pagination" id="prevPage" style="display:none;">Prev</a>
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            <a class="numberPagination @(i == currentPage ? "active" : "")" href="#pagination" data-page="@i">@i</a>
+        }
+         <a href="#pagination" id="nextPage" style="display:none;">Next</a>
     </div>
 </section>
+
+
+
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const itemsPerPage = 6;
+        let currentPage = 1;
+        const items = document.querySelectorAll(".servicesCard .items");
+        const totalItems = items.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+
+        function showPage(page) {
+
+            items.forEach(item => item.style.display = 'none');
+
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            for (let i = start; i < end && i < totalItems; i++) {
+                items[i].style.display = 'block';
+            }
+
+
+            document.querySelectorAll('.pagination .numberPagination').forEach(link => link.classList.remove('active'));
+            document.querySelector(`.pagination .numberPagination[data-page="${page}"]`).classList.add('active');
+
+            document.getElementById('prevPage').style.display = page === 1 ? 'none' : 'inline-block';
+
+
+            document.getElementById('nextPage').style.display = page === totalPages ? 'none' : 'inline-block';
+        }
+
+
+        showPage(currentPage);
+
+
+        document.getElementById('prevPage').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+
+
+        document.getElementById('nextPage').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        });
+
+        document.querySelectorAll('.pagination .numberPagination').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const selectedPage = parseInt(this.getAttribute('data-page'));
+                if (selectedPage !== currentPage) {
+                    currentPage = selectedPage;
+                    showPage(currentPage);
+                }
+            });
+        });
+    });
+
+</script>
+
+
+
+
